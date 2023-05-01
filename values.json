@@ -2,21 +2,12 @@
     "rostliny (Plantae)": {
         "rostliny krytosemenn\u00e9 (Magnoliophyta)": {
             "vy\u0161\u0161\u00ed dvoud\u011blo\u017en\u00e9 rostliny (Rosopsida)": {
-                "r\u016f\u017eotvar\u00e9 (Rosales)": {
-                    "r\u016f\u017eovit\u00e9 (Rosaceae)": [
-                        "kukl\u00edk (Geum)NAME:kukl\u00edk poto\u010dn\u00ed \n(Geum rivale)"
-                    ]
-                },
-                "prysky\u0159n\u00edkotvar\u00e9 (Ranunculales)": {
-                    "prysky\u0159n\u00edkovit\u00e9 (Ranunculaceae)": [
-                        "\u010deme\u0159ice (Helleborus)NAME:\u010deme\u0159ice v\u00fdchodn\u00ed \n(Helleborus orientalis)"
-                    ]
-                }
-            },
-            "rostliny jednod\u011blo\u017en\u00e9 (Liliopsida)": {
-                "ch\u0159estotvar\u00e9 (Asparagales)": {
-                    "ch\u0159estovit\u00e9 (Asparagaceae)": [
-                        "mod\u0159enec (Muscari)NAME:mod\u0159enec hroznat\u00fd \n(Muscari neglectum)"
+                "v\u0159esovcotvar\u00e9 (Ericales)": {
+                    "prvosenkovit\u00e9 (Primulaceae)": [
+                        "prvosenka (Primula)NAME:prvosenka bezlody\u017en\u00e1 \n(Primula vulgaris)"
+                    ],
+                    "jirnicovit\u00e9 (Polemoniaceae)": [
+                        "plamenka (Phlox)NAME:plamenka \u0161\u00eddlovit\u00e1 \n(Phlox subulata)"
                     ]
                 }
             }

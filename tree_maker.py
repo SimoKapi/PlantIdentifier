@@ -33,19 +33,15 @@ def makeTree():
     with open(valDir, "r") as f:
         data = json.load(f)
         for kingdom in iterableKeys(data):
-            # phylumStartY = deepcopy(counter)
             phylumCache = []
             phylumLine = []
             for phylum in iterableKeys(data[kingdom]):
-                # classStartY = deepcopy(counter)
                 classCache = []
                 classLine = []
                 for plantClass in iterableKeys(data[kingdom][phylum]):
-                    # orderStartY = deepcopy(counter)
                     orderCache = []
                     orderLine = []
                     for order in iterableKeys(data[kingdom][phylum][plantClass]):
-                        # familyStartY = deepcopy(counter)
                         familyCache = []
                         familyLine = []
                         for family in iterableKeys(data[kingdom][phylum][plantClass][order]):
@@ -62,26 +58,20 @@ def makeTree():
                             origin = drawRect(canvas, 2, (genusEndY - genusStartY)/2 + genusStartY, family)
                             drawLine(canvas, origin[1], genusLine)
                             familyLine.append(origin[0])
-                        # familyEndY = deepcopy(counter) - 1
                         origin = drawRect(canvas, 3, sum(familyCache)/len(familyCache), order)
                         drawLine(canvas, origin[1], familyLine)
                         orderLine.append(origin[0])
                         orderCache.append(sum(familyCache)/len(familyCache))
-                    # orderEndY = deepcopy(counter) - 1
                     origin = drawRect(canvas, 4, sum(orderCache)/len(orderCache), plantClass)
                     drawLine(canvas, origin[1], orderLine)
                     classLine.append(origin[0])
                     classCache.append(sum(orderCache)/len(orderCache))
-                # classEndY = deepcopy(counter) - 1
                 origin = drawRect(canvas, 5, sum(classCache)/len(classCache), phylum)
                 drawLine(canvas, origin[1], classLine)
                 phylumLine.append(origin[0])
                 phylumCache.append(sum(classCache)/len(classCache))
-            # phylumEndY = deepcopy(counter) - 1
             origin = drawRect(canvas, 6, sum(phylumCache)/len(phylumCache), kingdom)
             drawLine(canvas, origin[1], phylumLine)
-            # orderLine.append(origin[1])
-            # cache.append(sum(cache)/len(cache))
 
     writeTitles(canvas, 0, 0, "Name:")
     writeTitles(canvas, 1, 0, "Genus:")

@@ -54,21 +54,6 @@ def produce_output():
 
         imgPath = os.path.join(id_dir, image)
 
-        # if imgPath[:-4] != ".ppm":
-        #     im = Image.open(imgPath)
-        #     ppmPath = f"{imgPath[:imgPath.find('.')]}.ppm"
-        #     im.convert("RGB").save(ppmPath, "PPM")
-        #     os.rename(imgPath, os.path.join("wrong_formats", image))
-        #     imgPath = ppmPath
-
-        # img = cv2.imread(imgPath, cv2.IMREAD_COLOR)
-        # img = cv2.resize(img, (IMG_WIDTH, IMG_HEIGHT))
-        # output = model.predict(np.array([img]))
-
-        # newPath = os.path.join(id_dir, f"{str(imgs.index(image))}.jpg")
-        # im = Image.open(imgPath)
-        # im.convert("RGB").save(newPath, "JPEG")
-
         hierarchy = plants[image[:image.find('.')]]
         if hierarchy == None:
             continue
@@ -76,32 +61,22 @@ def produce_output():
         slide=prs.slides.add_slide(lyt) #New slide
         title=slide.shapes.title
         title.top = Inches(0)
-        title.left = Inches(6)
+        title.left = Inches(4.5)
+        title.width = Inches(4)
+        title.height = Inches(4)
         imag=slide.shapes.add_picture(imgPath, Inches(0.2), Inches(0.2), width=Inches(2.5), height=Inches(3.333)) #Image
         subtitle=slide.placeholders[1]
 
-        # plantName = data[str(np.argmax(output))]
         plantName = imgPath[:imgPath.find('.')]
-        # subtitle.text = plantName #Image classification
         title.text=f"{str(hierarchy.czechName).capitalize()} ({hierarchy.latinName})"
-        subtitle.text = f"Třída: {hierarchy.plantClass}\n Řád: {hierarchy.order}\n Čeleď: {hierarchy.family}\n Rod: {hierarchy.genus}"
+        subtitle.text = f"Třída: {str(hierarchy.plantClass).capitalize()}\n Řád: {str(hierarchy.order).capitalize()}\n Čeleď: {str(hierarchy.family).capitalize()}\n Rod: {str(hierarchy.genus).capitalize()}"
 
-        # os.remove(newPath)
-
-        # json_object = json.dumps(resultDict, indent=4)
-        # with open(valDir, "a") as f:
-        #     f.write(json_object)
         prs.save("plants.pptx")
 
 plants = {}
 def main():
     if (len(sys.argv) in [2,3] and sys.argv[1] in ["True", "true"]):
         eraseFile()
-        # getHierarchy("Galega_officinalis")
-        # getHierarchy("Zornia gibbosa")
-        # getHierarchy("Oncostema_elongata")
-        # getHierarchy("Lomatia_ferruginea")
-
         driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.get(searchUrl)
 
@@ -129,17 +104,6 @@ def main():
     if not sys.argv[2] in ["True", "true"]:
         produce_output()
     tm.makeTree()
-    #     with open(plantsList, "r") as f:
-    #         csvreader = csv.reader(f)
-    #         for i in csvreader:
-    #             for j in i:
-    #                 getHierarchy(j, driver)
-
-    #     json_object = json.dumps(resultDict, indent=4)
-    #     with open(valDir, "a") as f:
-    #         f.write(json_object)
-
-    # tm.makeTree()
 
 def eraseFile():
     open(valDir, "w").close()
@@ -154,8 +118,6 @@ def getHierarchy(plantName, driver):
     try:
         driver.find_element(By.XPATH, '//*[@id="screen"]/div[3]/div/p/span[1]')
     except:
-        # print("Could not find: " + plantName)
-        # return
         try:
             firstElem = driver.find_element(By.XPATH, '//*[@id="screen"]/div[5]/div[1]/div/a')
             firstElem.click()
