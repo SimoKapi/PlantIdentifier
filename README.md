@@ -18,3 +18,6 @@ tkinter, python-pptx, numpy, PIL, requests, json, csv, selenium, webdriver_manag
 - If using images, name each image by the corresponding latin name, replacing spaces with underscores (Example: muscar_neglectum) -> Open a terminal window in the main directory and run **python value_getter.py true false**
 - Sit back, relax, and let the magic happen
 - Take a screenshot of the resulting phylogenetic tree and find the PowerPoint in the main directory (Keep in mind using just the plant names does **not** yield a PowerPoint presentation)
+
+![Phylogenetic tree example]/Photos/tree.png "Example of a tree created by this program"
+![Powerpoint slide example]/Photos/powerpoint.png "Example of a powerpoint slide created by this program"
