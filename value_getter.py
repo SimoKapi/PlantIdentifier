@@ -94,9 +94,8 @@ def produce_output():
         prs.save("plants.pptx")
 
 plants = {}
-runByList = True
 def main():
-    if (len(sys.argv) in [2] and sys.argv[1] == "true"):
+    if (len(sys.argv) in [2,3] and sys.argv[1] in ["True", "true"]):
         eraseFile()
         # getHierarchy("Galega_officinalis")
         # getHierarchy("Zornia gibbosa")
@@ -109,7 +108,7 @@ def main():
         consent = driver.find_element(By.ID, 'consentAllButton')
         consent.click()
 
-        if runByList:
+        if sys.argv[2] in ["True", "true"]:
             with open(plantsList, "r") as f:
                 csvreader = csv.reader(f)
                 for i in csvreader:
@@ -127,7 +126,7 @@ def main():
         with open(valDir, "a") as f:
             f.write(json_object)
 
-    if not runByList:
+    if not sys.argv[2] in ["True", "true"]:
         produce_output()
     tm.makeTree()
     #     with open(plantsList, "r") as f:
