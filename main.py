@@ -1,4 +1,3 @@
-import tensorflow as tf
 import os
 from PIL import Image
 import json
@@ -68,8 +67,8 @@ def produce_output():
         subtitle=slide.placeholders[1]
 
         plantName = imgPath[:imgPath.find('.')]
-        title.text=f"{str(hierarchy.czechName).capitalize()} ({hierarchy.latinName})"
-        subtitle.text = f"Třída: {str(hierarchy.plantClass).capitalize()}\n Řád: {str(hierarchy.order).capitalize()}\n Čeleď: {str(hierarchy.family).capitalize()}\n Rod: {str(hierarchy.genus).capitalize()}"
+        title.text=f"{str(hierarchy.czechName).capitalize()}"
+        subtitle.text = f"Rod: {str(hierarchy.genus).capitalize()}"
 
         prs.save("plants.pptx")
 

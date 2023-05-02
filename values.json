@@ -1,16 +1,1 @@
-{
-    "rostliny (Plantae)": {
-        "rostliny krytosemenn\u00e9 (Magnoliophyta)": {
-            "vy\u0161\u0161\u00ed dvoud\u011blo\u017en\u00e9 rostliny (Rosopsida)": {
-                "v\u0159esovcotvar\u00e9 (Ericales)": {
-                    "prvosenkovit\u00e9 (Primulaceae)": [
-                        "prvosenka (Primula)NAME:prvosenka bezlody\u017en\u00e1 \n(Primula vulgaris)"
-                    ],
-                    "jirnicovit\u00e9 (Polemoniaceae)": [
-                        "plamenka (Phlox)NAME:plamenka \u0161\u00eddlovit\u00e1 \n(Phlox subulata)"
-                    ]
-                }
-            }
-        }
-    }
-}
+{}

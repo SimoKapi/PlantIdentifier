@@ -1,6 +1,12 @@
 import json
 from tkinter import *
 from copy import deepcopy
+from flask import Flask
+
+app = Flask(__name__)
+@app.route("/")
+def index():
+    return "Hello World!"
 
 valDir = "values.json"
 imgWidth = 1300
@@ -11,7 +17,7 @@ xPadding = 35
 yPadding = 9
 yOffset = 50
 
-totalYOffset = 50
+totalYOffset = 10
 totalXOffset = 50
 
 def iterableKeys(diction):
