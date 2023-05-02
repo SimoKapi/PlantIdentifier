@@ -1,19 +1,13 @@
 import json
 from tkinter import *
 from copy import deepcopy
-from flask import Flask
-
-app = Flask(__name__)
-@app.route("/")
-def index():
-    return "Hello World!"
 
 valDir = "values.json"
 imgWidth = 1300
 imgHeight = 800
-boxWidth = 130
-boxHeight = 17
-xPadding = 35
+boxWidth = 160
+boxHeight = 14
+xPadding = 20
 yPadding = 9
 yOffset = 50
 

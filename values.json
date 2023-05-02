@@ -1,1 +1,18 @@
-{}
+{
+    "rostliny (Plantae)": {
+        "rostliny krytosemenn\u00e9 (Magnoliophyta)": {
+            "vy\u0161\u0161\u00ed dvoud\u011blo\u017en\u00e9 rostliny (Rosopsida)": {
+                "r\u016f\u017eotvar\u00e9 (Rosales)": {
+                    "r\u016f\u017eovit\u00e9 (Rosaceae)": [
+                        "slivo\u0148 (Prunus)NAME:broskvo\u0148 obecn\u00e1 \n(Prunus persica)"
+                    ]
+                },
+                "m\u00fddeln\u00edkotvar\u00e9 (Sapindales)": {
+                    "m\u00fddeln\u00edkovit\u00e9 (Sapindaceae)": [
+                        "rostliny (Plantae)NAME:javor \n(Acer)"
+                    ]
+                }
+            }
+        }
+    }
+}

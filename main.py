@@ -14,10 +14,17 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+from flask import Flask
+from tkinter import Tk
 
 import tree_maker as tm
 from bs4 import BeautifulSoup as BS
 import re
+
+app = Flask(__name__)
+@app.route("/")
+def index():
+    return "Hello World!"
 
 valDir = "values.json"
 plantsList = "plants.csv"
@@ -73,8 +80,9 @@ def produce_output():
         prs.save("plants.pptx")
 
 plants = {}
+#python main.py [bool train data + make powerpoint] [bool use list]
 def main():
-    if (len(sys.argv) in [2,3] and sys.argv[1] in ["True", "true"]):
+    if (len(sys.argv) in [2, 3] and strToBool(sys.argv[1])):
         eraseFile()
         driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.get(searchUrl)
@@ -82,7 +90,7 @@ def main():
         consent = driver.find_element(By.ID, 'consentAllButton')
         consent.click()
 
-        if sys.argv[2] in ["True", "true"]:
+        if strToBool(sys.argv[2]):
             with open(plantsList, "r") as f:
                 csvreader = csv.reader(f)
                 for i in csvreader:
@@ -100,7 +108,8 @@ def main():
         with open(valDir, "a") as f:
             f.write(json_object)
 
-    if not sys.argv[2] in ["True", "true"]:
+    #Whether or not to use the plants.csv file as the source (True: yes, False: no, use images)
+    if not strToBool(sys.argv[2]):
         produce_output()
     tm.makeTree()
 
@@ -132,12 +141,15 @@ def getHierarchy(plantName, driver):
     soup = BS(page_source, features="lxml")
 
     #Scrape all values
-    kingdom = getTypeElement(soup, "říše")
-    phylum = getTypeElement(soup, "oddělení")
-    plantClass = getTypeElement(soup, "třída")
-    order = getTypeElement(soup, "řád")
-    family = getTypeElement(soup, "čeleď")
-    genus = getTypeElement(soup, "rod")
+    try:
+        kingdom = getTypeElement(soup, "říše")
+        phylum = getTypeElement(soup, "oddělení")
+        plantClass = getTypeElement(soup, "třída")
+        order = getTypeElement(soup, "řád")
+        family = getTypeElement(soup, "čeleď")
+        genus = getTypeElement(soup, "rod")
+    except:
+        return
 
     try:
         czechName = driver.find_element(By.XPATH, '//*[@id="screen"]/div[3]/div/h1/strong[1]').text
@@ -192,6 +204,9 @@ def iterableKeys(diction):
         resList.append(key)
     return resList
 
+def strToBool(inp):
+    return inp in ["True", "true"]
+
 def merge_dicts(dict_list):
     result = {}
     for sub_dict in dict_list:
@@ -225,4 +240,5 @@ def getTypeElement(soup, input):
     return f"{czechText} ({latinText})"
 
 if __name__ == "__main__":
+    # app.run(host="127.0.0.1", port=8080, debug=True)
     main()
