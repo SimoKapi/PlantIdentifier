@@ -70,7 +70,7 @@ def produce_output():
         title.left = Inches(4.5)
         title.width = Inches(4)
         title.height = Inches(4)
-        imag=slide.shapes.add_picture(imgPath, Inches(0.2), Inches(0.2), width=Inches(2.5), height=Inches(3.333)) #Image
+        imag=slide.shapes.add_picture(imgPath, Inches(0.2), Inches(0.2), height=Inches(3.333)) #Image
         subtitle=slide.placeholders[1]
 
         plantName = imgPath[:imgPath.find('.')]
@@ -104,6 +104,7 @@ def main():
                 plants[j[:j.find(".")]] = getHierarchy(j[:j.find(".")], driver)
                 print(j[:j.find(".")])
 
+        driver.close()
         json_object = json.dumps(resultDict, indent=4)
         with open(valDir, "a") as f:
             f.write(json_object)
@@ -137,18 +138,37 @@ def getHierarchy(plantName, driver):
                 print(f"Error! Could not find {plantName}")
                 return
 
-    page_source = driver.page_source
-    soup = BS(page_source, features="lxml")
+    # page_source = driver.page_source
+    # soup = BS(page_source, features="lxml")
 
     #Scrape all values
     try:
-        kingdom = getTypeElement(soup, "říše")
-        phylum = getTypeElement(soup, "oddělení")
-        plantClass = getTypeElement(soup, "třída")
-        order = getTypeElement(soup, "řád")
-        family = getTypeElement(soup, "čeleď")
-        genus = getTypeElement(soup, "rod")
-    except:
+        try:
+            kingdom = getTypeElement(driver, '//*[@id="screen"]/div[3]/div/p/span[1]/a', '//*[@id="screen"]/div[3]/div/p/span[1]/b')
+        except:
+            kingdom = "-"
+        try:
+            phylum = getTypeElement(driver, '//*[@id="screen"]/div[3]/div/p/span[2]/a', '//*[@id="screen"]/div[3]/div/p/span[2]/b')
+        except:
+            phylum = "-"
+        try:
+            plantClass = getTypeElement(driver, '//*[@id="screen"]/div[3]/div/p/span[3]/a', '//*[@id="screen"]/div[3]/div/p/span[3]/b')
+        except:
+            plantClass = "-"
+        try:
+            order = getTypeElement(driver, '//*[@id="screen"]/div[3]/div/p/span[4]/a', '//*[@id="screen"]/div[3]/div/p/span[4]/b')
+        except:
+            order = "-"
+        try:
+            family = getTypeElement(driver, '//*[@id="screen"]/div[3]/div/p/span[5]/a', '//*[@id="screen"]/div[3]/div/p/span[5]/b')
+        except:
+            family = "-"
+        try:
+            genus = getTypeElement(driver, '//*[@id="screen"]/div[3]/div/p/span[6]/a', '//*[@id="screen"]/div[3]/div/p/span[6]/b')
+        except:
+            genus = "-"
+    except Exception as e:
+        print(f"Failed to find: {plantName}")
         return
 
     try:
@@ -158,11 +178,10 @@ def getHierarchy(plantName, driver):
     try:
         latinName = driver.find_element(By.XPATH, '//*[@id="screen"]/div[3]/div/h1/strong[2]/em').text
     except:
-        latinName = "-"
-    try:
-        latinName = driver.find_element(By.XPATH, '//*[@id="screen"]/div[3]/div/h1/strong/em').text
-    except:
-        latinName = "-"
+        try:
+            latinName = driver.find_element(By.XPATH, '//*[@id="screen"]/div[3]/div/h1/strong/em').text
+        except:
+            latinName = "-"
 
     result = plant(kingdom, phylum, plantClass, order, family, genus, czechName, latinName)
 
@@ -222,22 +241,37 @@ def merge_dicts(dict_list):
 def getElementContent(soup, XPath):
     identifier = soup.find()
 
-def getTypeElement(soup, input):
-    identifier = soup.find(string=re.compile(input))
-    latin = identifier.find_next("a")
-    czech = latin.find_next("b")
+def getTypeElement(driver, latinPath, czechPath):
+    # identifier = soup.find(string=re.compile(input))
+    # if input == "rod" and identifier.find_next("a") == "plantae":
+    #     print(type(identifier))
+    # latin = identifier.find_next("a")
+    # czech = latin.find_next("b")
+    try:
+        czech = driver.find_element(By.XPATH, czechPath).text
+    except Exception as e:
+        # print(f"{czechPath}: {e}")
+        czech = "-"
+    try:
+        latin = driver.find_element(By.XPATH, latinPath).text
+    except Exception as e:
+        # print(f"{latinPath}: {e}")
+        latin = "-"
     
-    if len(latin) > 0:
-        latinText = str(latin.contents[0])
-        if latinText[:4] == "<em>":
-            latinText = latinText[4:-5]
-    else:
-        latinText = "-"
+    # if len(latin) > 0:
+    #     latinText = str(latin.contents[0])
+    #     if latinText[:4] == "<em>":
+    #         latinText = latinText[4:-5]
+    # else:
+    #     latinText = "-"
 
-    czechText = "-"
-    if len(czech) > 0:
-        czechText = czech.contents[0]
-    return f"{czechText} ({latinText})"
+    # czechText = "-"
+    # if len(czech) > 0:
+    #     czechText = czech.contents[0]
+
+    # if input == "rod" and czechText == "rostliny":
+    #     return getTypeElement(soup, "podčeleď")
+    return f"{czech} ({latin})"
 
 if __name__ == "__main__":
     # app.run(host="127.0.0.1", port=8080, debug=True)

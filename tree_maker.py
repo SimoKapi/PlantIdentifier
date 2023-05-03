@@ -6,7 +6,7 @@ valDir = "values.json"
 imgWidth = 1300
 imgHeight = 800
 boxWidth = 160
-boxHeight = 14
+boxHeight = 17
 xPadding = 20
 yPadding = 9
 yOffset = 50
@@ -87,7 +87,7 @@ def getY(counter):
 
 def drawLine(canvas, origin, points):
     for i in points:
-        canvas.create_line(origin[0], origin[1], i[0], i[1], fill="#18091a", width="3")
+        canvas.create_line(origin[0], origin[1], i[0], i[1], fill="#18091a", width="1.5")
 
 def writeTitles(canvas, rightOffset, counter, label):
     x1 = imgWidth - ((boxWidth + xPadding) * rightOffset) - boxWidth - totalXOffset
