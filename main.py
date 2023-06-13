@@ -59,6 +59,9 @@ def produce_output():
             continue
 
         imgPath = os.path.join(id_dir, image)
+        # im = Image.open(imgPath)
+        # rgb_im = im.convert("RGB")
+        # rgb_im.save(f"{image[:image.find('.')]}.jpg")
 
         hierarchy = plants[image[:image.find('.')]]
         if hierarchy == None:
@@ -70,12 +73,13 @@ def produce_output():
         title.left = Inches(4.5)
         title.width = Inches(4)
         title.height = Inches(4)
+        print(imgPath)
         imag=slide.shapes.add_picture(imgPath, Inches(0.2), Inches(0.2), height=Inches(3.333)) #Image
         subtitle=slide.placeholders[1]
 
         plantName = imgPath[:imgPath.find('.')]
-        title.text=f"{str(hierarchy.czechName).capitalize()}"
-        subtitle.text = f"Rod: {str(hierarchy.genus).capitalize()}"
+        title.text=f"{str(hierarchy.czechName).capitalize()} ({str(hierarchy.latinName).capitalize()})"
+        subtitle.text = f"Rod: {str(hierarchy.genus).capitalize()}, \nDruh: {str(hierarchy.family).capitalize()}, \nČeleď: {str(hierarchy.order).capitalize()}"
 
         prs.save("plants.pptx")
 

@@ -2,88 +2,79 @@
     "rostliny (Plantae)": {
         "rostliny krytosemenn\u00e9 (Magnoliophyta)": {
             "vy\u0161\u0161\u00ed dvoud\u011blo\u017en\u00e9 rostliny (Rosopsida)": {
-                "lomikamenotvar\u00e9 (Saxifragales)": {
-                    "lomikamenovit\u00e9 (Saxifragaceae)": [
-                        "lomik\u00e1men (Saxifraga)NAME:lomik\u00e1men mechovit\u00fd \n(Saxifraga bryoides)",
-                        "\u010dechrava (Astilbe)NAME:\u010dechrava \u010d\u00ednsk\u00e1 \n(Astilbe chinensis)"
+                "m\u00fddeln\u00edkotvar\u00e9 (Sapindales)": {
+                    "m\u00fddeln\u00edkovit\u00e9 (Sapindaceae)": [
+                        "javor (Acer)NAME:javor ml\u00e9\u010d \n(Acer platanoides)"
                     ]
                 },
-                "hv\u011bzdnicotvar\u00e9 (Asterales)": {
-                    "hv\u011bzdnicovit\u00e9 (Asteraceae)": [
-                        "- (Asteroideae)NAME:Anthemideae Cass. \n(-)",
-                        "- (Cichorieae)NAME:pampeli\u0161ka \n(Taraxacum)"
+                "mi\u0159\u00edkotvar\u00e9 (Apiales)": {
+                    "aralkovit\u00e9 (Araliaceae)": [
+                        "b\u0159e\u010d\u0165an (Hedera)NAME:b\u0159e\u010d\u0165an pop\u00ednav\u00fd \n(Hedera helix)"
+                    ],
+                    "mi\u0159\u00edkovit\u00e9 (Apiaceae)": [
+                        "kerbl\u00edk (Anthriscus)NAME:kerbl\u00edk t\u0159ebule \n(Anthriscus cerefolium)"
                     ]
                 },
                 "r\u016f\u017eotvar\u00e9 (Rosales)": {
                     "r\u016f\u017eovit\u00e9 (Rosaceae)": [
-                        "- (-)NAME:r\u016f\u017ee \n(Rosa)",
-                        "slivo\u0148 (Prunus)NAME:sakura ozdobn\u00e1 \n(Prunus serrulata)",
-                        "- (-)NAME:ostru\u017ein\u00edk \n(Rubus)",
-                        "- (-)NAME:kontryhel \n(Alchemilla)",
-                        "z\u00e1kula (Kerria)NAME:z\u00e1kula japonsk\u00e1 \n(Kerria japonica)",
-                        "- (Amygdaloideae)NAME:jablo\u0148 \n(Malus)"
+                        "- (-)NAME:Amygdaloideae Arnott \n(-)",
+                        "- (-)NAME:r\u016f\u017ee \n(Rosa)"
+                    ]
+                },
+                "hv\u011bzdnicotvar\u00e9 (Asterales)": {
+                    "hv\u011bzdnicovit\u00e9 (Asteraceae)": [
+                        "protnice (Pseudognaphalium)NAME:prot\u011b\u017e \u017elutob\u00edl\u00e1 \n(Pseudognaphalium luteo-album)",
+                        "- (Astereae)NAME:sedmikr\u00e1ska \n(Bellis)",
+                        "pampeli\u0161ka (Taraxacum)NAME:pampeli\u0161ky smet\u00e1nky \n(Taraxacum)"
                     ]
                 },
                 "hluchavkotvar\u00e9 (Lamiales)": {
-                    "olivovn\u00edkovit\u00e9 (Oleaceae)": [
-                        "\u0161e\u0159\u00edk (Syringa)NAME:\u0161e\u0159\u00edk obecn\u00fd \n(Syringa vulgaris)"
-                    ],
-                    "hluchavkovit\u00e9 (Lamiaceae)": [
-                        "- (Nepetoideae)NAME:levandule \n(Lavandula)",
-                        "popenec (Glechoma)NAME:popenec obecn\u00fd \n(Glechoma hederacea)"
+                    "truba\u010dovit\u00e9 (Bignoniaceae)": [
+                        "- (-)NAME:\u017eakaranda \n(Jacaranda)"
                     ]
                 },
-                "v\u0159esovcotvar\u00e9 (Ericales)": {
-                    "v\u0159esovcovit\u00e9 (Ericaceae)": [
-                        "- (Ericoideae)NAME:p\u011bni\u0161n\u00edk \n(Rhododendron)"
+                "- (Aquifoliales)": {
+                    "cesm\u00ednovit\u00e9 (Aquifoliaceae)": [
+                        "- (-)NAME:cesm\u00edna \n(Ilex)",
+                        "cesm\u00edna (Ilex)NAME:cesm\u00edna ostrolist\u00e1 \n(Ilex aquifolium)"
                     ]
                 },
-                "d\u0159\u00ednotvar\u00e9 (Cornales)": {
-                    "hortenziovit\u00e9 (Hydrangeaceae)": [
-                        "hortenzie (Hydrangea)NAME:Hydrangea alternifolia Sieb. \n(Hydrangea alternifolia)"
+                "hvozd\u00edkotvar\u00e9 (Caryophyllales)": {
+                    "rdesnovit\u00e9 (Polygonaceae)": [
+                        "reve\u0148 (Rheum)NAME:reve\u0148 kade\u0159av\u00e1 \n(Rheum rhabarbarum)"
                     ]
                 },
-                "mi\u0159\u00edkotvar\u00e9 (Apiales)": {
-                    "mi\u0159\u00edkovit\u00e9 (Apiaceae)": [
-                        "m\u00e1\u010dka (Eryngium)NAME:Eryngium aquifolium Cav. \n(Eryngium aquifolium)"
-                    ],
-                    "aralkovit\u00e9 (Araliaceae)": [
-                        "- (Aralioideae)NAME:b\u0159e\u010d\u0165an \n(Hedera)"
+                "prysky\u0159n\u00edkotvar\u00e9 (Ranunculales)": {
+                    "d\u0159i\u0161\u0165\u00e1lovit\u00e9 (Berberidaceae)": [
+                        "mah\u00f3nie (Mahonia)NAME:mah\u00f3nie cesm\u00ednolist\u00e1 \n(Mahonia aquifolium)"
                     ]
                 },
-                "ho\u0159cotvar\u00e9 (Gentianales)": {
-                    "toje\u0161\u0165ovit\u00e9 (Apocynaceae)": [
-                        "- (-)NAME:barv\u00ednek \n(Vinca)"
+                "zimostr\u00e1zotvar\u00e9 (Buxales)": {
+                    "zimostr\u00e1zovit\u00e9 (Buxaceae)": [
+                        "zimostr\u00e1z (Buxus)NAME:zimostr\u00e1z v\u017edyzelen\u00fd \n(Buxus sempervirens)"
                     ]
                 },
-                "m\u00fddeln\u00edkotvar\u00e9 (Sapindales)": {
-                    "m\u00fddeln\u00edkovit\u00e9 (Sapindaceae)": [
-                        "j\u00edrovcov\u00e9 (Hippocastanoideae)NAME:javor \n(Acer)"
-                    ]
-                },
-                "brukvotvar\u00e9 (Brassicales)": {
-                    "brukvovit\u00e9 (Brassicaceae)": [
-                        "m\u011bs\u00ed\u010dnice (Lunaria)NAME:m\u011bs\u00ed\u010dnice ro\u010dn\u00ed \n(Lunaria annua)"
+                "jesencotvar\u00e9 (Celastrales)": {
+                    "jesencovit\u00e9 (Celastraceae)": [
+                        "brslen (Euonymus)NAME:brslen Fortune\u016fv \n(Euonymus fortunei)",
+                        "brslen (Euonymus)NAME:brslen Fortune\u016fv \n(Euonymus fortunei)",
+                        "brslen (Euonymus)NAME:brslen japonsk\u00fd \n(Euonymus japonicus)"
                     ]
                 }
             },
             "rostliny jednod\u011blo\u017en\u00e9 (Liliopsida)": {
-                "lipnicotvar\u00e9 (Poales)": {
-                    "lipnicovit\u00e9 (Poaceae)": [
-                        "ozdobnice (Miscanthus)NAME:ozdobnice \u010d\u00ednsk\u00e1 \n(Miscanthus sinensis)"
-                    ]
-                },
                 "ch\u0159estotvar\u00e9 (Asparagales)": {
                     "ch\u0159estovit\u00e9 (Asparagaceae)": [
-                        "hyacintov\u00e9 (Scilloideae)NAME:mod\u0159enec \n(Muscari)"
+                        "bohy\u0161ka (Hosta)NAME:bohy\u0161ka zvln\u011bn\u00e1 \n(Hosta)"
                     ],
                     "amarylkovit\u00e9 (Amaryllidaceae)": [
-                        "amarylkov\u00e9 (Amaryllidoideae)NAME:narcis \n(Narcissus)"
+                        "\u010desnek (Allium)NAME:pa\u017eitka pob\u0159e\u017en\u00ed \n(Allium schoenoprasum)"
                     ]
                 },
                 "liliotvar\u00e9 (Liliales)": {
                     "liliovit\u00e9 (Liliaceae)": [
-                        "- (Lilioideae)NAME:tulip\u00e1n \n(Tulipa)"
+                        "- (Lilioideae)NAME:tulip\u00e1n \n(Tulipa)",
+                        "tulip\u00e1n (Tulipa)NAME:tulip\u00e1n zahradn\u00ed \n(Tulipa)"
                     ]
                 }
             }
@@ -91,8 +82,23 @@
         "jehli\u010dnany (Pinophyta)": {
             "jehli\u010dnany (Pinopsida)": {
                 "borovicotvar\u00e9 (Pinales)": {
-                    "borovicovit\u00e9 (Pinaceae)": [
-                        "borovicov\u00e9 (Pinoideae)NAME:borovice \n(Pinus)"
+                    "- (-)": [
+                        "- (-)NAME:cyp\u0159i\u0161ovit\u00e9 \n(-)"
+                    ],
+                    "tisovit\u00e9 (Taxaceae)": [
+                        "tis (Taxus)NAME:tis \u010derven\u00fd \n(Taxus baccata)"
+                    ],
+                    "cyp\u0159i\u0161ovit\u00e9 (Cupressaceae)": [
+                        "zerav (Thuja)NAME:zerav obrovsk\u00fd \n(Thuja plicata)"
+                    ]
+                }
+            }
+        },
+        "jinany (Ginkgoophyta)": {
+            "jinany (Ginkgoopsida)": {
+                "jinanotvar\u00e9 (Ginkgoales)": {
+                    "jinanovit\u00e9 (Ginkgoaceae)": [
+                        "jinan (Ginkgo)NAME:jinan dvoulalo\u010dn\u00fd \n(Ginkgo biloba)"
                     ]
                 }
             }

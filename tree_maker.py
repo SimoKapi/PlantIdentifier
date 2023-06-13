@@ -5,11 +5,11 @@ from copy import deepcopy
 valDir = "values.json"
 imgWidth = 1300
 imgHeight = 800
-boxWidth = 160
+boxWidth = 130
 boxHeight = 17
-xPadding = 20
-yPadding = 9
-yOffset = 50
+xPadding = 35
+yPadding = 5
+yOffset = 20
 
 totalYOffset = 10
 totalXOffset = 50
@@ -73,13 +73,13 @@ def makeTree():
             origin = drawRect(canvas, 6, sum(phylumCache)/len(phylumCache), kingdom)
             drawLine(canvas, origin[1], phylumLine)
 
-    writeTitles(canvas, 0, 0, "Name:")
-    writeTitles(canvas, 1, 0, "Genus:")
-    writeTitles(canvas, 2, 0, "Family:")
-    writeTitles(canvas, 3, 0, "Order:")
-    writeTitles(canvas, 4, 0, "Class:")
-    writeTitles(canvas, 5, 0, "Phylum:")
-    writeTitles(canvas, 6, 0, "Kingdom:")
+    writeTitles(canvas, 0, 0, "Jméno (Name):")
+    writeTitles(canvas, 1, 0, "Rod (Genus):")
+    writeTitles(canvas, 2, 0, "Čeleď (Family):")
+    writeTitles(canvas, 3, 0, "Řád (Order):")
+    writeTitles(canvas, 4, 0, "Třída (Class):")
+    writeTitles(canvas, 5, 0, "Kmen (Phylum):")
+    writeTitles(canvas, 6, 0, "Říše (Kingdom):")
     window.mainloop()
 
 def getY(counter):
